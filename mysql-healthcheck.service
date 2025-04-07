@@ -1,0 +1,13 @@
+[Unit]
+Description=MySQL Healthcheck Flask App
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/opt/mysql-healthcheck
+ExecStart=/usr/bin/python3 http-mysql-healthcheck.py
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
