@@ -3,6 +3,7 @@ Description=MySQL Healthcheck Flask App
 After=network.target
 
 [Service]
+EnvironmentFile=/etc/mysql-healthcheck.env
 User=www-data
 WorkingDirectory=/opt/mysql-healthcheck
 ExecStart=/usr/bin/python3 http-mysql-healthcheck.py
